@@ -415,15 +415,6 @@ final.info()
     memory usage: 10.6+ MB
 
 
-
-```python
-pd.plotting.scatter_matrix(X, figsize=(10,10));
-```
-
-
-![png](index_files/index_9_0.png)
-
-
 ### Train Test Split
 
 
@@ -524,35 +515,7 @@ Iterate over a range of train-test split sizes from .5 to .95. For each of these
 
 
 ```python
-train_err = []
-test_err = []
-t_sizes = list(range(5,100,5))
-for t_size in t_sizes:
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=t_size)
-    linreg.fit(X_train, y_train)
-    y_hat_train = linreg.predict(X_train)
-    y_hat_test = linreg.predict(X_test)
-    train_err.append(mean_squared_error(y_train, y_hat_train))
-    test_err.append(mean_squared_error(y_test, y_hat_test))
-plt.scatter(t_sizes, train_err, label='Training Error')
-plt.scatter(t_sizes, test_err, label='Testing Error')
-plt.legend()
-```
-
-
-
-
-    <matplotlib.legend.Legend at 0x111e33c18>
-
-
-
-
-![png](index_files/index_31_1.png)
-
-
-
-```python
-# Your code here
+#Your code here
 ```
 
 # Extension:
@@ -560,33 +523,5 @@ Repeat the previous example, but for each train-test split size, generate at lea
 
 
 ```python
-train_err = []
-test_err = []
-t_sizes = list(range(5,100,5))
-for t_size in t_sizes:
-    temp_train_err = []
-    temp_test_err = []
-    for i in range(8):
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=t_size)
-        linreg.fit(X_train, y_train)
-        y_hat_train = linreg.predict(X_train)
-        y_hat_test = linreg.predict(X_test)
-        temp_train_err.append(mean_squared_error(y_train, y_hat_train))
-        temp_test_err.append(mean_squared_error(y_test, y_hat_test))
-    train_err.append(np.mean(temp_train_err))
-    test_err.append(np.mean(temp_test_err))
-plt.scatter(t_sizes, train_err, label='Training Error')
-plt.scatter(t_sizes, test_err, label='Testing Error')
-plt.legend()
+#Your code here
 ```
-
-
-
-
-    <matplotlib.legend.Legend at 0x111a22fd0>
-
-
-
-
-![png](index_files/index_34_1.png)
-
